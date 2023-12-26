@@ -13,8 +13,8 @@ CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_vkd3d-lutri
 
 class CtInstaller(VKD3DInstaller):
 
-    CT_URL = 'https://api.github.com/repos/lutris/vkd3d/releases'
-    CT_INFO_URL = 'https://github.com/lutris/vkd3d/releases/tag/'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/lutris/vkd3d/releases'
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/lutris/vkd3d/releases/tag/'
 
     def __init__(self, main_window = None):
         super().__init__(main_window)

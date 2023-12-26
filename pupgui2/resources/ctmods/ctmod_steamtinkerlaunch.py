@@ -44,9 +44,9 @@ of the SteamTinkerLaunch Installation guide on its GitHub page.''')}
 class CtInstaller(QObject):
 
     BUFFER_SIZE = 4096
-    CT_URL = 'https://api.github.com/repos/sonic2kk/steamtinkerlaunch/releases'
-    CT_BRANCHES_URL = 'https://api.github.com/repos/sonic2kk/steamtinkerlaunch/branches'
-    CT_GH_URL = 'https://github.com/sonic2kk/steamtinkerlaunch'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/sonic2kk/steamtinkerlaunch/releases'
+    CT_BRANCHES_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/sonic2kk/steamtinkerlaunch/branches'
+    CT_GH_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/sonic2kk/steamtinkerlaunch'
     CT_INFO_URL = CT_GH_URL + '/releases/tag/'
 
     p_download_progress_percent = 0
@@ -134,7 +134,7 @@ class CtInstaller(QObject):
             'version', 'download'
         """
         if self.allow_git:
-            return {'version': tag, 'download': f'https://github.com/sonic2kk/steamtinkerlaunch/archive/{tag}.tar.gz'}
+            return {'version': tag, 'download': f'https://steamdeck-proxy.juij.eu.org/https://github.com/sonic2kk/steamtinkerlaunch/archive/{tag}.tar.gz'}
 
         url = self.CT_URL + (f'/tags/{tag}' if tag else '/latest')
         data = self.rs.get(url).json()

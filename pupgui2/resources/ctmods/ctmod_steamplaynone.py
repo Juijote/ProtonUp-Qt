@@ -18,8 +18,8 @@ CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_steamplayno
 
 class CtInstaller(QObject):
 
-    CT_URL = 'https://github.com/Scrumplex/Steam-Play-None/archive/refs/heads/main.tar.gz'  # no releases
-    CT_INFO_URL = 'https://github.com/Scrumplex/Steam-Play-None'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/Scrumplex/Steam-Play-None/archive/refs/heads/main.tar.gz'  # no releases
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/Scrumplex/Steam-Play-None'
 
     p_download_progress_percent = 0
     download_progress_percent = Signal(int)

@@ -20,11 +20,11 @@ CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_protontkg',
 class CtInstaller(QObject):
 
     BUFFER_SIZE = 65536
-    CT_URL = 'https://api.github.com/repos/Frogging-Family/wine-tkg-git/releases'
-    CT_INFO_URL = 'https://github.com/Frogging-Family/wine-tkg-git/releases/tag/'
-    CT_WORKFLOW_URL = 'https://api.github.com/repos/Frogging-Family/wine-tkg-git/actions/workflows'
-    CT_ARTIFACT_URL = 'https://api.github.com/repos/Frogging-Family/wine-tkg-git/actions/runs/{}/artifacts'
-    CT_INFO_URL_CI = 'https://github.com/Frogging-Family/wine-tkg-git/actions/runs/'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/Frogging-Family/wine-tkg-git/releases'
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/Frogging-Family/wine-tkg-git/releases/tag/'
+    CT_WORKFLOW_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/Frogging-Family/wine-tkg-git/actions/workflows'
+    CT_ARTIFACT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/Frogging-Family/wine-tkg-git/actions/runs/{}/artifacts'
+    CT_INFO_URL_CI = 'https://steamdeck-proxy.juij.eu.org/https://github.com/Frogging-Family/wine-tkg-git/actions/runs/'
     PROTON_PACKAGE_NAME = 'proton-valvexbe-arch-nopackage'
 
     p_download_progress_percent = 0
@@ -58,7 +58,7 @@ class CtInstaller(QObject):
         Return Type: bool
         """
         try:
-            if 'https://github.com' in url:
+            if 'https://steamdeck-proxy.juij.eu.org/https://github.com' in url:
                 file = self.rs.get(url, stream=True)
             else:
                 file = requests.get(url, stream=True)

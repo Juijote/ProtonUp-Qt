@@ -20,8 +20,8 @@ CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_kron4ekvani
 class CtInstaller(QObject):
 
     BUFFER_SIZE = 65536
-    CT_URL = 'https://api.github.com/repos/Kron4ek/Wine-Builds/releases'
-    CT_INFO_URL = 'https://github.com/Kron4ek/Wine-Builds/releases/tag/'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/Kron4ek/Wine-Builds/releases'
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/Kron4ek/Wine-Builds/releases/tag/'
 
     p_download_progress_percent = 0
     download_progress_percent = Signal(int)

@@ -21,8 +21,8 @@ CT_DESCRIPTION['en'] = QCoreApplication.instance().translate('ctmod_d8vk', '''Vu
 class CtInstaller(QObject):
 
     BUFFER_SIZE = 65536
-    CT_URL = 'https://api.github.com/repos/AlpyneDreams/d8vk/actions/artifacts'
-    CT_INFO_URL = 'https://github.com/AlpyneDreams/d8vk/commit/'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/AlpyneDreams/d8vk/actions/artifacts'
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/AlpyneDreams/d8vk/commit/'
 
     p_download_progress_percent = 0
     download_progress_percent = Signal(int)

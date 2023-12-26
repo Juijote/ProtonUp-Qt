@@ -15,8 +15,8 @@ CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_roberta', '
 class CtInstaller(LuxtorpedaInstaller):
 
     BUFFER_SIZE = 4096
-    CT_URL = 'https://api.github.com/repos/dreamer/roberta/releases'
-    CT_INFO_URL = 'https://github.com/dreamer/roberta/releases/tag/'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/dreamer/roberta/releases'
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/dreamer/roberta/releases/tag/'
 
     def __init__(self, main_window = None):
         super().__init__(main_window)

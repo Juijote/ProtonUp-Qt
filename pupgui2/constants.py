@@ -10,9 +10,9 @@ APP_VERSION = '2.8.2'
 APP_ID = 'net.davidotek.pupgui2'
 APP_THEMES = ( 'light', 'dark', 'system', None )
 APP_ICON_FILE = os.path.join(xdg_config_home, 'pupgui/appicon256.png')
-APP_GHAPI_URL = 'https://api.github.com/repos/Davidotek/ProtonUp-qt/releases'
+APP_GHAPI_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/Davidotek/ProtonUp-qt/releases'
 DAVIDOTEK_KOFI_URL = 'https://ko-fi.com/davidotek'
-PROTONUPQT_GITHUB_URL = 'https://github.com/DavidoTek/ProtonUp-Qt'
+PROTONUPQT_GITHUB_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/DavidoTek/ProtonUp-Qt'
 ABOUT_TEXT = '''\
 {APP_NAME} v{APP_VERSION} by DavidoTek: <a href="{PROTONUPQT_GITHUB_URL}">https://github.com/DavidoTek/ProtonUp-Qt</a><br />
 Copyright (C) 2021-2023 DavidoTek, licensed under GPLv3
@@ -69,7 +69,7 @@ def PALETTE_DARK():
 
 PROTONDB_COLORS = {'platinum': '#b4c7dc', 'gold': '#cfb53b', 'silver': '#a6a6a6', 'bronze': '#cd7f32', 'borked': '#ff0000', 'pending': '#748472' }
 
-STEAM_API_GETAPPLIST_URL = 'https://api.steampowered.com/ISteamApps/GetAppList/v2/'
+STEAM_API_GETAPPLIST_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.steampowered.com/ISteamApps/GetAppList/v2/'
 STEAM_APP_PAGE_URL = 'https://store.steampowered.com/app/'
 AWACY_GAME_LIST_URL = 'https://raw.githubusercontent.com/Starz0r/AreWeAntiCheatYet/master/games.json'
 AWACY_WEB_URL = 'https://areweanticheatyet.com/?search={GAMENAME}&sortOrder=&sortBy='
@@ -91,7 +91,7 @@ STEAM_STL_FISH_VARIABLES = os.path.join(HOME_DIR, '.config/fish/fish_variables')
 LUTRIS_WEB_URL = 'https://lutris.net/games/'
 EPIC_STORE_URL = 'https://store.epicgames.com/p/'
 
-GITHUB_API = 'https://api.github.com/'
+GITHUB_API = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/'
 # GitLab can have any self-hosted instance, so we store a list of known GitLab instances
 GITLAB_API = [
     'https://gitlab.com/api/'

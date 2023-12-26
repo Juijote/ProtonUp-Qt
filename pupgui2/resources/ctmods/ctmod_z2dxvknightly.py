@@ -19,8 +19,8 @@ CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_z2dxvknight
 class CtInstaller(QObject):
 
     BUFFER_SIZE = 65536
-    CT_URL = 'https://api.github.com/repos/doitsujin/dxvk/actions/artifacts'
-    CT_INFO_URL = 'https://github.com/doitsujin/dxvk/commit/'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/doitsujin/dxvk/actions/artifacts'
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/doitsujin/dxvk/commit/'
 
     p_download_progress_percent = 0
     download_progress_percent = Signal(int)
