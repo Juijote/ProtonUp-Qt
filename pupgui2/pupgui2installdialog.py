@@ -84,7 +84,7 @@ class PupguiInstallDialog(QDialog):
         elif app_lang in ctobj['description']:  # Examples: de, nl
             desc = ctobj['description'][app_lang]
         else:
-            desc = ctobj['description']['zh_CN']
+            desc = ctobj['description']['en']
         
         self.ui.txtDescription.setHtml(desc)
 
