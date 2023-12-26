@@ -13,18 +13,7 @@ jobs:
     - uses: actions/checkout@v1
     
     - name: Install required dependencies
-      run: sudo apt install -y gtk-update-icon-cache python3-pip python3-setuptools patchelf desktop-file-utils libgdk-pixbuf2.0-dev fakeroot strace fuse PySide6
-    
-    - name: Run i18n script
-      run: |
-        BASE_DIR=$(pwd)
-        TS_FILES="$BASE_DIR/i18n/*.ts"
-        for ts in $TS_FILES
-        do
-          lang=$(sed 's/.ts//g' <<< "$(basename $ts)")
-          qm="$BASE_DIR/pupgui2/resources/i18n/$lang.qm"
-          pyside6-lrelease $ts -qm $qm
-        done
+      run: sudo apt install -y gtk-update-icon-cache python3-pip python3-setuptools patchelf desktop-file-utils libgdk-pixbuf2.0-dev fakeroot strace fuse
     
     - name: Download AppImageBuilder etc.
       run: |
