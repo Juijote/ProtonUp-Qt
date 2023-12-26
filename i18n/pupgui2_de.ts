@@ -6,7 +6,7 @@
     <message>
         <location filename="../pupgui2/ctloader.py" line="55"/>
         <source>Error!</source>
-        <translation>Fehler!</translation>
+        <translation>错误！</translation>
     </message>
     <message>
         <location filename="../pupgui2/ctloader.py" line="57"/>
