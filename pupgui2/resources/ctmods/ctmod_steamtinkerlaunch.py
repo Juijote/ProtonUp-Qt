@@ -12,7 +12,6 @@ from pupgui2.datastructures import MsgBoxType, MsgBoxResult
 from pupgui2.steamutil import get_fish_user_paths, remove_steamtinkerlaunch, get_external_steamtinkerlaunch_intall
 from pupgui2.util import host_which, config_advanced_mode
 from pupgui2.util import ghapi_rlcheck
-from pupgui2.util import build_headers_with_authorization
 
 
 CT_NAME = 'SteamTinkerLaunch'
@@ -38,7 +37,7 @@ On <b>Steam Deck</b>, relevant dependencies will be installed for you. If you ar
 More information is available on the SteamTinkerLaunch Installation wiki page.
 <br/><br/>
 SteamTinkerLaunch has a number of <b>Optional Dependencies</b> which have to be installed separately for extra functionality. Please see the Optional Dependencies section
-of the SteamTinkerLaunch Installation guide on its GitHub page.''')}
+of the SteamTinkerLaunch Installation guide on its GitHub page..''')}
 
 
 class CtInstaller(QObject):
@@ -60,11 +59,7 @@ class CtInstaller(QObject):
         self.p_download_canceled = False
         self.remove_existing_installation = False
         self.main_window = main_window
-
-        self.rs = requests.Session()
-        rs_headers = build_headers_with_authorization({}, main_window.web_access_tokens, 'github')
-        self.rs.headers.update(rs_headers)
-
+        self.rs = main_window.rs or requests.Session()
         self.allow_git = allow_git
         proc_prefix = ['flatpak-spawn', '--host'] if os.path.exists('/.flatpak-info') else []
         self.distinfo = subprocess.run(
@@ -195,7 +190,7 @@ class CtInstaller(QObject):
                 'xprop': host_which('xprop'),
                 'xrandr': host_which('xrandr'),
                 'xxd': host_which('xxd'),
-                'xwininfo': host_which('xwininfo'),
+                'xwinfo': host_which('xwininfo'),
                 'yad >= 7.2': yad_exe and yad_ver >= 7.2
             }
 
@@ -375,7 +370,7 @@ class CtInstaller(QObject):
                 pup_stl_path_date = f'# Added by ProtonUp-Qt on {datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S")}'
                 pup_stl_path_line = f'if [ -d "{stl_path}" ]; then export PATH="$PATH:{stl_path}"; fi'
                 present_shell_files = [
-                    os.path.join(constants.HOME_DIR, f) for f in os.listdir(constants.HOME_DIR) if os.path.isfile(os.path.join(constants.HOME_DIR, f)) and f in constants.STEAM_STL_SHELL_FILES
+                    os.path.join(os.path.expanduser('~'), f) for f in os.listdir(os.path.expanduser('~')) if os.path.isfile(os.path.join(os.path.expanduser('~'), f)) and f in constants.STEAM_STL_SHELL_FILES
                 ]
                 if os.path.exists(constants.STEAM_STL_FISH_VARIABLES):
                     present_shell_files.append(constants.STEAM_STL_FISH_VARIABLES)
@@ -403,7 +398,7 @@ class CtInstaller(QObject):
             print('Adding SteamTinkerLaunch as a compatibility tool...')
             subprocess.run(stl_proc_prefix + ['./steamtinkerlaunch', 'compat', 'add'])
 
-            os.chdir(constants.HOME_DIR)
+            os.chdir(os.path.expanduser('~'))
 
         protondir = os.path.join(install_dir, 'SteamTinkerLaunch')
 

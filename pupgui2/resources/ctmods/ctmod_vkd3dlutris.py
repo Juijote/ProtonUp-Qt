@@ -18,4 +18,3 @@ class CtInstaller(VKD3DInstaller):
 
     def __init__(self, main_window = None):
         super().__init__(main_window)
-        self.release_format = 'tar.xz'

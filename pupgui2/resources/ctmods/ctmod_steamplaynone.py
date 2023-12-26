@@ -8,7 +8,6 @@ import requests
 from PySide6.QtCore import QObject, QCoreApplication, Signal, Property
 
 from pupgui2.util import extract_tar
-from pupgui2.util import build_headers_with_authorization
 
 
 CT_NAME = 'Steam-Play-None'
@@ -27,10 +26,7 @@ class CtInstaller(QObject):
     def __init__(self, main_window = None):
         super(CtInstaller, self).__init__()
         self.p_download_canceled = False
-
-        self.rs = requests.Session()
-        rs_headers = build_headers_with_authorization({}, main_window.web_access_tokens, 'github')
-        self.rs.headers.update(rs_headers)
+        self.rs = main_window.rs or requests.Session()
 
     def get_download_canceled(self):
         return self.p_download_canceled

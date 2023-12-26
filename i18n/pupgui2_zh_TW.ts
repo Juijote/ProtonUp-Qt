@@ -6,7 +6,7 @@
     <message>
         <location filename="../pupgui2/ctloader.py" line="55"/>
         <source>Error!</source>
-        <translation>錯誤！</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/ctloader.py" line="57"/>
@@ -14,10 +14,7 @@
 {TOOL_LIST}
 
 If you believe this is an error, please report a bug on GitHub!</source>
-        <translation>無法載入以下相容性工具：
-{TOOL_LIST}
-
-如果您確定提示有誤，請在 Github 上回報錯誤！</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -30,7 +27,7 @@ If you believe this is an error, please report a bug on GitHub!</source>
     <message>
         <location filename="../pupgui2/pupgui2.py" line="268"/>
         <source>Unused: {unused_ctools}</source>
-        <translation>未使用：{unused_ctools}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/pupgui2.py" line="291"/>
@@ -76,8 +73,7 @@ If you believe this is an error, please report a bug on GitHub!</source>
         <location filename="../pupgui2/pupgui2.py" line="342"/>
         <source>You are trying to remove compatibility tools
 which are in use by {n} games. Continue?</source>
-        <translation>您即將刪除 {n} 個遊戲正在使用的相容工具。
-繼續嗎？</translation>
+        <translation>您正在刪除 {n} 個遊戲正在使用的相容工具。繼續嗎？</translation>
     </message>
     <message>
         <location filename="../pupgui2/pupgui2.py" line="349"/>
@@ -132,17 +128,19 @@ Cancel and exit anyway?</source>
         <translation>正在下載：</translation>
     </message>
     <message>
+        <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="75"/>
         <source>0</source>
-        <translation type="vanished">0</translation>
+        <translation>0</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="89"/>
         <source>Add Custom Install Directory...</source>
-        <translation>新增到自訂安裝資料夾...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="92"/>
         <source>...</source>
-        <translation type="vanished">...</translation>
+        <translation>...</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="103"/>
@@ -190,42 +188,42 @@ Cancel and exit anyway?</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="26"/>
         <source>Dialog</source>
-        <translation>對話框</translation>
+        <translation type="unfinished">對話框</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="44"/>
         <source>Specify a custom location for downloading and displaying a launcher&apos;s compatibility tools.</source>
-        <translation>指定用於下載和顯示啟動器相容性工具的自訂位置。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="56"/>
         <source>Directory:</source>
-        <translation>資料夾：</translation>
+        <translation type="unfinished">資料夾：</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="66"/>
         <source>Launcher:</source>
-        <translation>啟動器：</translation>
+        <translation type="unfinished">啟動器：</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="87"/>
         <source>Reset the custom install directory back to default for this launcher</source>
-        <translation>將此啟動器的自訂安裝資料夾重置回預設值</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="90"/>
         <source>Default</source>
-        <translation>預設</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="113"/>
         <source>Save</source>
-        <translation>儲存</translation>
+        <translation type="unfinished">儲存</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_custominstalldirectorydialog.ui" line="120"/>
         <source>Close</source>
-        <translation>關閉</translation>
+        <translation type="unfinished">關閉</translation>
     </message>
 </context>
 <context>
@@ -274,7 +272,7 @@ You are running {APP_VERSION} but {newest_version} is available.</source>
     <message>
         <location filename="../pupgui2/pupgui2aboutdialog.py" line="124"/>
         <source>Added shortcut!</source>
-        <translation>已新增捷徑！</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="14"/>
@@ -284,7 +282,7 @@ You are running {APP_VERSION} but {newest_version} is available.</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUI for installing/updating Wine- and Proton-based compatibility tools.&lt;br/&gt;Inspired by/partly based on AUNaseef&apos;s protonup.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;p&gt;用於安裝/更新基於 Win- 和 Proton- 的相容工具的 GUI。&lt;br&gt;受到 AUNaseef 的 protonup 啟發/部分基於此。&lt;/p&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用於安裝/更新基於 Win- 和 Proton- 的相容工具的 GUI。&lt;br/&gt;受到 AUNaseef 的 protonup 啟發/部分基於此。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="91"/>
@@ -310,13 +308,12 @@ You are running {APP_VERSION} but {newest_version} is available.</source>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="170"/>
         <source>Adds a shortcut to open ProtonUp-Qt from your Steam library.
 To remove the shortcut, open Steam and select &quot;remove non-Steam game from your library&quot;.</source>
-        <translation>新增一個可以從 Steam 打開 ProtonUp-QT 的捷徑。
-若要刪除捷徑，請打開 Steam，然後選擇「將所選的非 Steam 遊戲從收藏庫中移除」。</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="174"/>
         <source>Add Steam shortcut</source>
-        <translation>新增 Steam 捷徑</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="181"/>
@@ -382,12 +379,12 @@ To remove the shortcut, open Steam and select &quot;remove non-Steam game from y
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_ctinfodialog.ui" line="106"/>
         <source>Refresh Games</source>
-        <translation>重新整理遊戲</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_ctinfodialog.ui" line="120"/>
         <source>Search games...</source>
-        <translation>搜尋遊戲...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_ctinfodialog.ui" line="180"/>
@@ -397,12 +394,12 @@ To remove the shortcut, open Steam and select &quot;remove non-Steam game from y
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_ctinfodialog.ui" line="187"/>
         <source>e.g. Half-Life 3</source>
-        <translation>例如：Half-Life 3</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_ctinfodialog.ui" line="190"/>
         <source>Search for a game...</source>
-        <translation>搜尋遊戲...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_ctinfodialog.ui" line="213"/>
@@ -433,20 +430,20 @@ To remove the shortcut, open Steam and select &quot;remove non-Steam game from y
     <message>
         <location filename="../pupgui2/pupgui2ctinfodialog.py" line="110"/>
         <source>Game</source>
-        <translation>遊戲</translation>
+        <translation type="unfinished">遊戲</translation>
     </message>
 </context>
 <context>
     <name>PupguiCustomInstallDirectoryDialog</name>
     <message>
-        <location filename="../pupgui2/pupgui2customiddialog.py" line="42"/>
+        <location filename="../pupgui2/pupgui2customiddialog.py" line="41"/>
         <source>Custom Install Directory</source>
         <translation>自訂安裝資料夾</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2customiddialog.py" line="86"/>
+        <location filename="../pupgui2/pupgui2customiddialog.py" line="85"/>
         <source>Select Custom Install Directory — ProtonUp-Qt</source>
-        <translation>選擇自訂安裝資料夾 — ProtonUp-Qt</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Save</source>
@@ -468,202 +465,186 @@ To remove the shortcut, open Steam and select &quot;remove non-Steam game from y
 <context>
     <name>PupguiGameListDialog</name>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="81"/>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="93"/>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="103"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="77"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="89"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="99"/>
         <source>Game</source>
         <translation>遊戲</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="81"/>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="103"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="77"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="99"/>
         <source>Compatibility Tool</source>
         <translation>相容性工具</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="81"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="77"/>
         <source>Deck compatibility</source>
         <translation>Steam Deck 相容性</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="81"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="77"/>
         <source>Anticheat</source>
         <translation>反作弊器</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="93"/>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="103"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="89"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="99"/>
         <source>Runner</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="93"/>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="103"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="89"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="99"/>
         <source>Install Location</source>
-        <translation>安裝位置</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="93"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="89"/>
         <source>Installed Date</source>
-        <translation>安裝日期</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="144"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="140"/>
         <source>click</source>
         <translation>按下</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="211"/>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="412"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="205"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="396"/>
         <source>Unknown</source>
         <translation>未知</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="216"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="210"/>
         <source>Installed at {DATE} ({TIME})</source>
-        <translation>安裝於 {DATE} ({TIME})</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="250"/>
-        <source>Name: {compat_item_text}</source>
-        <translation>名稱：{compat_item_text}</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="252"/>
-        <source>
-Path: {compat_tool_bin_path}</source>
-        <translation>
-路徑：{compat_tool_bin_path}</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="256"/>
-        <source>
-Type: {wine_type}</source>
-        <translation>
-類型：{wine_type}</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="259"/>
-        <source>Browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="260"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="244"/>
+        <source>Name: {compat_item_text}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="246"/>
+        <source>
+Path: {compat_tool_bin_path}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="250"/>
+        <source>
+Type: {wine_type}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="253"/>
         <source>Native</source>
-        <translation>原生</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="255"/>
         <source>Type: Native</source>
-        <translation type="vanished">類型：原生</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="302"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="291"/>
         <source>Done</source>
-        <translation>完成</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="302"/>
-        <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="112"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="291"/>
+        <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="105"/>
         <source>Search</source>
-        <translation>搜尋</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="370"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="354"/>
         <source>Double click to browse...</source>
-        <translation>連按兩下瀏覽...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="373"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="357"/>
         <source>Install location does not exist!</source>
-        <translation>安裝位置不存在！</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="414"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="398"/>
         <source>Unsupported</source>
         <translation>不支援</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="417"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="401"/>
         <source>Playable</source>
         <translation>可遊玩</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="419"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="403"/>
         <source>Native (playable)</source>
         <translation>原生 (可遊玩)</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="420"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="404"/>
         <source>Playable using {compat_tool}</source>
         <translation>可使用 {compat_tool} 遊玩</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="424"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="408"/>
         <source>Verified</source>
         <translation>已驗證</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="426"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="410"/>
         <source>Native (verified)</source>
         <translation>原生 (已驗證)</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="427"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="411"/>
         <source>Verified for {compat_tool}</source>
         <translation>已用 {compat_tool} 驗證</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="386"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="370"/>
         <source>Support was explicitly enabled / works out of the box</source>
         <translation>明確啟用支援 / 開箱即用</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="63"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="60"/>
         <source>Game List for {LAUNCHER}</source>
-        <translation>{LAUNCHER} 的遊戲列表</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="66"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="63"/>
         <source>Installed games: {NO_INSTALLED}</source>
-        <translation>已安裝遊戲：{NO_INSTALLED}</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="260"/>
-        <source>Type: {PLATFORM}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="269"/>
-        <source>Double-click to open in browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="389"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="373"/>
         <source>Game plans to support Proton/Wine</source>
         <translation>遊戲計劃支援 Proton/Wine</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="392"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="376"/>
         <source>No official statement but runs fine (may require tinkering)</source>
         <translation>沒有官方聲明，但執行良好（可能需要修補）</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="395"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="379"/>
         <source>Anti-Cheat stops game from running properly</source>
         <translation>反作弊器使遊戲無法正常運行</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="398"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="382"/>
         <source>Linux support was explicitly denied</source>
         <translation>明確拒絕支援 Linux</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="401"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="385"/>
         <source>Anti-Cheat status unknown</source>
         <translation>反作弊器狀態未知</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="332"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="317"/>
         <source>Confidence: {confidence}
 Score: {score}
 Trending: {trending}</source>
@@ -684,31 +665,26 @@ Trending: {trending}</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="68"/>
         <source>e.g. Team Fortress 2</source>
-        <translation>例如：Team Fortress 2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="71"/>
         <source>Search for a game...</source>
-        <translation>搜尋遊戲...</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="91"/>
         <source>Refresh Games</source>
-        <translation>重新整理遊戲</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="105"/>
-        <source>Shortcut Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="285"/>
-        <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="119"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="274"/>
+        <location filename="../pupgui2/resources/ui/pupgui2_gamelistdialog.ui" line="112"/>
         <source>Apply</source>
         <translation>套用</translation>
     </message>
     <message>
-        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="284"/>
+        <location filename="../pupgui2/pupgui2gamelistdialog.py" line="273"/>
         <source>Close</source>
         <translation>關閉</translation>
     </message>
@@ -752,85 +728,17 @@ Trending: {trending}</source>
     </message>
 </context>
 <context>
-    <name>PupguiShortcutDialog</name>
-    <message>
-        <location filename="../pupgui2/pupgui2shortcutdialog.py" line="46"/>
-        <source>App Name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2shortcutdialog.py" line="46"/>
-        <source>Executable</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2shortcutdialog.py" line="46"/>
-        <source>Start Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/pupgui2shortcutdialog.py" line="46"/>
-        <source>Icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="14"/>
-        <source>Steam Shortcut Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="54"/>
-        <source>Add a new shortcut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="57"/>
-        <source>Add new</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="64"/>
-        <source>Click on a row, then click here to remove a shortcut</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="67"/>
-        <source>Remove selected</source>
-        <translation type="unfinished">移除所選</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="87"/>
-        <source>Save changes and delete marked shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="90"/>
-        <source>Save</source>
-        <translation type="unfinished">儲存</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="97"/>
-        <source>Close without saving changes or deleting shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ui/pupgui2_shortcutdialog.ui" line="100"/>
-        <source>Close</source>
-        <translation type="unfinished">關閉</translation>
-    </message>
-</context>
-<context>
     <name>ctmod_00protonge</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_00protonge.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_00protonge.py" line="21"/>
         <source>Steam compatibility tool for running Windows games with improvements over Valve&apos;s default Proton.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Use this when you don&apos;t know what to choose.&lt;/b&gt;</source>
-        <translation>Steam 用於執行 Windows 遊戲的相容性工具，改善了 Valve 預設的 Proton。&lt;br&gt;&lt;br&gt;&lt;b&gt;當您不知道該選擇什麼時使用此工具。&lt;/b&gt;</translation>
+        <translation>Steam 用於執行 Windows 遊戲的相容性工具，改善了 Valve 預設的 Proton。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;當您不知道該選擇什麼時使用此工具。&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
     <name>ctmod_00winege</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_00winege.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_00winege.py" line="21"/>
         <source>Compatibility tool &quot;Wine&quot; to run Windows games on Linux. Based on Valve Proton Experimental&apos;s bleeding-edge Wine, built for Lutris.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Use this when you don&apos;t know what to choose.&lt;/b&gt;</source>
         <translation>在 Linux 上執行 Windows 遊戲的相容性工具「Wine」。基於 Valve Proton Experimental 的前沿 Wine，專為 Lutris 打造。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;當您不知道該選擇什麼時使用它。&lt;/b&gt;</translation>
     </message>
@@ -838,32 +746,32 @@ Trending: {trending}</source>
 <context>
     <name>ctmod_boxtron</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="22"/>
         <source>Steam Play compatibility tool to run DOS games using native Linux DOSBox.</source>
         <translation>使用原生 Linux DOSBox 執行 DOS 遊戲的 Steam Play 相容性工具。</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="103"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="106"/>
         <source>missing</source>
         <translation>遺失</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="104"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="107"/>
         <source>found</source>
         <translation>發現</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="106"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="109"/>
         <source>Missing dependencies!</source>
         <translation>遺失依賴項！</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="108"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="111"/>
         <source>You need dosbox, inotify-tools and timidity for Boxtron.</source>
         <translation>您需要 dosbox、inotify-tools 和 timidity 才能使用 Boxtron。</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="114"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_boxtron.py" line="117"/>
         <source>Will continue installing Boxtron anyway.</source>
         <translation>仍然會繼續安裝 Boxtron。</translation>
     </message>
@@ -871,7 +779,7 @@ Trending: {trending}</source>
 <context>
     <name>ctmod_d8vk</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_d8vk.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_d8vk.py" line="21"/>
         <source>Vulkan-based implementation of Direct3D 8/9/10/11 (Nightly).&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Warning: Nightly version is unstable, use with caution!&lt;/b&gt;</source>
         <translation>基於 Vulkan 的 Direct3D 8/9/10/11 實現。（每夜版）&lt;br/&gt;&lt;br/&gt;&lt;b&gt;警告：每夜版不穩定，謹慎使用！&lt;/b&gt;</translation>
     </message>
@@ -879,7 +787,7 @@ Trending: {trending}</source>
 <context>
     <name>ctmod_kron4ekvanilla</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_kron4ekvanilla.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_kron4ekvanilla.py" line="21"/>
         <source>Compatibility tool &quot;Wine&quot; to run Windows games on Linux. Official version from the WineHQ sources, compiled by Kron4ek.</source>
         <translation>在 Linux 上執行 Windows 遊戲的相容性工具「Wine」。來自 WineHQ 來源的官方版本，由 Kron4ek 編譯。</translation>
     </message>
@@ -887,7 +795,7 @@ Trending: {trending}</source>
 <context>
     <name>ctmod_lutriswine</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_lutriswine.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_lutriswine.py" line="21"/>
         <source>Compatibility tool &quot;Wine&quot; to run Windows games on Linux. Improved by Lutris to offer better compatibility or performance in certain games.</source>
         <translation>在 Linux 上執行 Windows 遊戲的相容性工具「Wine」。由 Lutris 改善以在某些遊戲中提供更好的相容性或性能。</translation>
     </message>
@@ -895,7 +803,7 @@ Trending: {trending}</source>
 <context>
     <name>ctmod_luxtorpeda</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_luxtorpeda.py" line="18"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_luxtorpeda.py" line="20"/>
         <source>Luxtorpeda provides Linux-native game engines for specific Windows-only games.</source>
         <translation>Luxtorpeda 為特定的 Windows 限定遊戲提供 Linux 原生遊戲引擎。</translation>
     </message>
@@ -903,19 +811,15 @@ Trending: {trending}</source>
 <context>
     <name>ctmod_northstarproton</name>
     <message>
+        <location filename="../pupgui2/resources/ctmods/ctmod_northstarproton.py" line="20"/>
         <source>Proton build based on TKG&apos;s proton-tkg to run the Northstar client + TitanFall 2. By cyrv6737.&lt;br/&gt;&lt;br/&gt;&lt;b style=&quot;color:orange;&quot;&gt;Read the following before proceeding&lt;/b&gt;:&lt;br/&gt;&lt;a href=&quot;https://github.com/cyrv6737/NorthstarProton&quot;&gt;https://github.com/cyrv6737/NorthstarProton&lt;/a&gt;</source>
-        <translation type="vanished">基於 TKG 的 proton-tkg 構建的 Proton 以執行 Northstar 客戶端 + TitanFall 2。由 cyrv6737 製作。&lt;br/&gt;&lt;br/&gt;&lt;b style=&quot;color:orange;&quot;&gt;在繼續之前閱讀以下內容 &lt;/b&gt;:&lt;br/&gt;&lt;a href=&quot;https://github.com/cyrv6737/NorthstarProton&quot;&gt;https://github.com/cyrv6737/NorthstarProton&lt;/a&gt;</translation>
-    </message>
-    <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_northstarproton.py" line="18"/>
-        <source>Proton build based on TKG&apos;s proton-tkg to run the Northstar client + TitanFall 2. By cyrv6737.&lt;br/&gt;&lt;br/&gt;&lt;b style=&quot;color:orange;&quot;&gt;Read the following before proceeding&lt;/b&gt;:&lt;br/&gt;&lt;a href=&quot;https://github.com/R2NorthstarTools/NorthstarProton&quot;&gt;https://github.com/R2NorthstarTools/NorthstarProton&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>基於 TKG 的 proton-tkg 構建的 Proton 以執行 Northstar 客戶端 + TitanFall 2。由 cyrv6737 製作。&lt;br/&gt;&lt;br/&gt;&lt;b style=&quot;color:orange;&quot;&gt;在繼續之前閱讀以下內容 &lt;/b&gt;:&lt;br/&gt;&lt;a href=&quot;https://github.com/cyrv6737/NorthstarProton&quot;&gt;https://github.com/cyrv6737/NorthstarProton&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>ctmod_protontkg</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_protontkg.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_protontkg.py" line="23"/>
         <source>Custom Proton build for running Windows games, built with the Wine-tkg build system.</source>
         <translation>用於執行 Windows 遊戲的自訂 Proton 構建，使用 Wine-tkg 構建系統構建。</translation>
     </message>
@@ -928,41 +832,38 @@ Trending: {trending}</source>
 &lt;br/&gt;
 &lt;br/&gt;
 This build is based on &lt;b&gt;Wine Master&lt;/b&gt;.</source>
-        <translation>用於執行 Windows 遊戲的自訂 Proton 構建，使用 Wine-tkg 構建系統構建。
-&lt;br&gt;
-&lt;br&gt;
-基於 &lt;b&gt;Wine Master&lt;/b&gt;。</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ctmod_roberta</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="19"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="22"/>
         <source>Steam Play compatibility tool to run adventure games using native Linux ScummVM.</source>
         <translation>使用原生 Linux ScummVM 執行冒險遊戲的 Steam Play 相容性工具。</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="103"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="106"/>
         <source>missing</source>
         <translation>遺失</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="104"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="107"/>
         <source>found</source>
         <translation>發現</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="106"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="109"/>
         <source>Missing dependencies!</source>
         <translation>遺失依賴項！</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="108"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="111"/>
         <source>You need scummvm and inotify-tools for Roberta.</source>
         <translation>您需要 scummvm 和 inotify-tools 才能使用 Roberta。</translation>
     </message>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="113"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_roberta.py" line="116"/>
         <source>Will continue installing Roberta anyway.</source>
         <translation>仍然會繼續安裝 Roberta。</translation>
     </message>
@@ -1000,10 +901,9 @@ On &lt;b&gt;Steam Deck&lt;/b&gt;, relevant dependencies will be installed for yo
 More information is available on the SteamTinkerLaunch Installation wiki page.
 &lt;br/&gt;&lt;br/&gt;
 SteamTinkerLaunch has a number of &lt;b&gt;Optional Dependencies&lt;/b&gt; which have to be installed separately for extra functionality. Please see the Optional Dependencies section
-of the SteamTinkerLaunch Installation guide on its GitHub page.</source>
-        <translation>
-與 Steam 用戶端一起使用的 Linux 包裝工具，它允許對 Proton 和本機 Linux 遊戲的遊戲工具進行簡單的圖形配置。
-&lt;br&gt;&lt;br&gt;
+of the SteamTinkerLaunch Installation guide on its GitHub page..</source>
+        <translation>與 Steam 用戶端一起使用的 Linux 包裝工具，它允許對 Proton 和本機 Linux 遊戲的遊戲工具進行簡單的圖形配置。
+&lt;br/&gt;&lt;br/&gt;
 在 &lt;b&gt;Steam Deck&lt;/b&gt; 上，將為您安裝相關的依賴項。 如果您不是用 Steam Deck，&lt;b&gt;請確保您已安裝以下依賴項&lt;/b&gt;：
 &lt;ul&gt;
   &lt;li&gt;awk (or gawk)&lt;/li&gt;
@@ -1017,21 +917,18 @@ of the SteamTinkerLaunch Installation guide on its GitHub page.</source>
   &lt;li&gt;xrandr&lt;/li&gt;
   &lt;li&gt;xwininfo&lt;/li&gt;
   &lt;li&gt;xxd&lt;/li&gt;
-  &lt;li&gt;Yad &amp;gt;= &lt;b&gt;v7.2&lt;/b&gt;&lt;/li&gt;
+  &lt;li&gt;Yad &gt;= &lt;b&gt;v7.2&lt;/b&gt;&lt;/li&gt;
 &lt;/ul&gt;
 SteamTinkerLaunch 安裝 wiki 頁面上提供了更多資訊。
-&lt;br&gt;&lt;br&gt;
-SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安裝才能獲得額外功能。
-請參閱其 GitHub 頁面上 SteamTinkerLaunch 安裝指南的可選依賴項部分。</translation>
+&lt;br/&gt;&lt;br/&gt;
+SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安裝才能獲得額外功能。 請參閱其 GitHub 頁面上 SteamTinkerLaunch 安裝指南的可選依賴項部分。</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ctmods/ctmod_steamtinkerlaunch.py" line="200"/>
         <source>You have several unmet dependencies for SteamTinkerLaunch.
 
 </source>
-        <translation>您有幾個依賴項未滿足 SteamTinkerLaunch。
-
-</translation>
+        <translation>您有幾個依賴項未滿足 SteamTinkerLaunch。</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ctmods/ctmod_steamtinkerlaunch.py" line="202"/>
@@ -1117,12 +1014,9 @@ On &lt;b&gt;Steam Deck&lt;/b&gt;, relevant dependencies will be installed for yo
 More information is available on the SteamTinkerLaunch Installation wiki page.
 &lt;br/&gt;&lt;br/&gt;
 SteamTinkerLaunch has a number of &lt;b&gt;Optional Dependencies&lt;/b&gt; which have to be installed separately for extra functionality. Please see the Optional Dependencies section
-of the SteamTinkerLaunch Installation guide on its GitHub page.</source>
-        <translation>
-&lt;b&gt;Git 版本——可能不穩定&lt;/b&gt;
-&lt;br&gt;&lt;br&gt;
-與 Steam 用戶端一起使用的 Linux 包裝工具，它允許對 Proton 和本機 Linux 遊戲的遊戲工具進行簡單的圖形配置。
-&lt;br&gt;&lt;br&gt;
+of the SteamTinkerLaunch Installation guide on its GitHub page..</source>
+        <translation>與 Steam 用戶端一起使用的 Linux 包裝工具，它允許對 Proton 和本機 Linux 遊戲的遊戲工具進行簡單的圖形配置。
+&lt;br/&gt;&lt;br/&gt;
 在 &lt;b&gt;Steam Deck&lt;/b&gt; 上，將為您安裝相關的依賴項。 如果您不是用 Steam Deck，&lt;b&gt;請確保您已安裝以下依賴項&lt;/b&gt;：
 &lt;ul&gt;
   &lt;li&gt;awk (or gawk)&lt;/li&gt;
@@ -1136,18 +1030,17 @@ of the SteamTinkerLaunch Installation guide on its GitHub page.</source>
   &lt;li&gt;xrandr&lt;/li&gt;
   &lt;li&gt;xwininfo&lt;/li&gt;
   &lt;li&gt;xxd&lt;/li&gt;
-  &lt;li&gt;Yad &amp;gt;= &lt;b&gt;v7.2&lt;/b&gt;&lt;/li&gt;
+  &lt;li&gt;Yad &gt;= &lt;b&gt;v7.2&lt;/b&gt;&lt;/li&gt;
 &lt;/ul&gt;
 SteamTinkerLaunch 安裝 wiki 頁面上提供了更多資訊。
-&lt;br&gt;&lt;br&gt;
-SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安裝才能獲得額外功能。
-請參閱其 GitHub 頁面上 SteamTinkerLaunch 安裝指南的可選依賴項部分。</translation>
+&lt;br/&gt;&lt;br/&gt;
+SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安裝才能獲得額外功能。 請參閱其 GitHub 頁面上 SteamTinkerLaunch 安裝指南的可選依賴項部分。</translation>
     </message>
 </context>
 <context>
     <name>ctmod_vkd3d-lutris</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_vkd3dlutris.py" line="14"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_vkd3dlutris.py" line="19"/>
         <source>Fork of Wine&apos;s VKD3D which aims to implement the full Direct3D 12 API on top of Vulkan (Lutris Release).&lt;br/&gt;&lt;br/&gt;https://github.com/lutris/docs/blob/master/HowToDXVK.md</source>
         <translation>Wine 的 VKD3D 分支，目的是在 Vulkan 上實現完整的 Direct3D 12 API。（Lutris 發佈版）&lt;br/&gt;&lt;br/&gt;https://github.com/lutris/docs/blob/master/HowToDXVK.md</translation>
     </message>
@@ -1155,7 +1048,7 @@ SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安�
 <context>
     <name>ctmod_vkd3d-proton</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_vkd3dproton.py" line="17"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_vkd3dproton.py" line="20"/>
         <source>Fork of Wine&apos;s VKD3D which aims to implement the full Direct3D 12 API on top of Vulkan (Valve Release).&lt;br/&gt;&lt;br/&gt;https://github.com/lutris/docs/blob/master/HowToDXVK.md</source>
         <translation>Wine 的 VKD3D 分支，目的是在 Vulkan 上實現完整的 Direct3D 12 API。（Valve 發佈版）&lt;br/&gt;&lt;br/&gt;https://github.com/lutris/docs/blob/master/HowToDXVK.md</translation>
     </message>
@@ -1165,7 +1058,7 @@ SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安�
     <message>
         <location filename="../pupgui2/resources/ctmods/ctmod_winetkg_valve_otherdistro.py" line="15"/>
         <source>Custom Wine build for running Windows games, built with the Wine-tkg build system.</source>
-        <translation>用於執行 Windows 遊戲的自訂 Wine 構建，使用 Wine-tkg 構建系統構建。</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1173,13 +1066,13 @@ SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安�
     <message>
         <location filename="../pupgui2/resources/ctmods/ctmod_winetkg_vanilla_wine.py" line="15"/>
         <source>Custom Wine build for running Windows games, built with the Wine-tkg build system.</source>
-        <translation>用於執行 Windows 遊戲的自訂 Wine 構建，使用 Wine-tkg 構建系統構建。</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ctmod_z0dxvk</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_z0dxvk.py" line="18"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_z0dxvk.py" line="19"/>
         <source>Vulkan based implementation of Direct3D 9, 10 and 11 for Linux/Wine.&lt;br/&gt;&lt;br/&gt;https://github.com/lutris/docs/blob/master/HowToDXVK.md</source>
         <translation>基於 Vulkan 的 Direct3D 9、10 和 11 的 Linux/Wine 實現。&lt;br/&gt;&lt;br/&gt;https://github.com/lutris/docs/blob/master/HowToDXVK.md</translation>
     </message>
@@ -1187,7 +1080,7 @@ SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安�
 <context>
     <name>ctmod_z1dxvkasync</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_z1dxvkasync.py" line="15"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_z1dxvkasync.py" line="20"/>
         <source>Vulkan based implementation of Direct3D 9, 10 and 11 for Linux/Wine with async patch by Sporif.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Warning: Use only with singleplayer games!&lt;/b&gt;</source>
         <translation>基於 Vulkan 的 Direct3D 9、10 和 11 的 Linux/Wine 實現，帶有 Sporif 的異步補丁。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;警告：僅用於單人遊戲！&lt;/b&gt;</translation>
     </message>
@@ -1195,7 +1088,7 @@ SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安�
 <context>
     <name>ctmod_z2dxvknightly</name>
     <message>
-        <location filename="../pupgui2/resources/ctmods/ctmod_z2dxvknightly.py" line="18"/>
+        <location filename="../pupgui2/resources/ctmods/ctmod_z2dxvknightly.py" line="20"/>
         <source>Nightly version of DXVK (master branch), a Vulkan based implementation of Direct3D 9, 10 and 11 for Linux/Wine.&lt;br/&gt;&lt;br/&gt;&lt;b&gt;Warning: Nightly version is unstable, use with caution!&lt;/b&gt;</source>
         <translation>每夜版本的 DXVK（master 分支），基於 Vulkan 的 Direct3D 9、10 和 11 的 Linux/Wine 實現。&lt;br/&gt;&lt;br/&gt;&lt;b&gt;警告：每夜版本不穩定，請謹慎使用！&lt;/b&gt;</translation>
     </message>
@@ -1203,12 +1096,12 @@ SteamTinkerLaunch 有許多&lt;b&gt;可選依賴項&lt;/b&gt;，必須單獨安�
 <context>
     <name>steamutil.py</name>
     <message>
-        <location filename="../pupgui2/steamutil.py" line="459"/>
+        <location filename="../pupgui2/steamutil.py" line="447"/>
         <source>Unable to Remove SteamTinkerLaunch</source>
         <translation>無法移除 SteamTinkerLaunch</translation>
     </message>
     <message>
-        <location filename="../pupgui2/steamutil.py" line="462"/>
+        <location filename="../pupgui2/steamutil.py" line="450"/>
         <source>Access to SteamTinkerLaunch installation folder at &apos;{STL_SYMLINK_PATH}&apos; was denied, please remove this folder manually.
 
 The uninstallation will continue.</source>
@@ -1228,29 +1121,29 @@ The uninstallation will continue.</source>
 <context>
     <name>util.py</name>
     <message>
-        <location filename="../pupgui2/util.py" line="310"/>
+        <location filename="../pupgui2/util.py" line="305"/>
         <source>Delete SteamTinkerLaunch configuration</source>
         <translation>刪除 SteamTinkerLaunch 配置</translation>
     </message>
     <message>
-        <location filename="../pupgui2/util.py" line="311"/>
+        <location filename="../pupgui2/util.py" line="306"/>
         <source>Uninstalling SteamTinkerLaunch</source>
         <translation>正在解除安裝 SteamTinkerLaunch</translation>
     </message>
     <message>
-        <location filename="../pupgui2/util.py" line="312"/>
+        <location filename="../pupgui2/util.py" line="307"/>
         <source>SteamTinkerLaunch will be removed from your system. If this tool was installed with ProtonUp-Qt, this will also update your PATH to remove SteamTinkerLaunch.
 Do you want the configuration to be removed?</source>
         <translation>SteamTinkerLaunch 將從您的系統中被移除。如果這個工具是和 ProtonUp-Qt 一起安裝的，這也會更新您的 PATH 以移除 SteamTinkerLaunch。
 您想移除配置嗎？</translation>
     </message>
     <message>
-        <location filename="../pupgui2/util.py" line="480"/>
+        <location filename="../pupgui2/util.py" line="454"/>
         <source>Warning: GitHub API rate limit exceeded!</source>
         <translation>警告：超出 GitHub API 速率限制！</translation>
     </message>
     <message>
-        <location filename="../pupgui2/util.py" line="481"/>
+        <location filename="../pupgui2/util.py" line="455"/>
         <source>GitHub API rate limit exceeded. You may need to wait a while or specify a GitHub API key if you have one.
 
 See https://github.com/DavidoTek/ProtonUp-Qt/issues/161#issuecomment-1358200080 for details.</source>

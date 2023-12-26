@@ -7,7 +7,6 @@ import vdf
 import requests
 import threading
 import pkgutil
-import binascii
 from steam.utils.appcache import parse_appinfo
 
 from PySide6.QtCore import Signal
@@ -15,8 +14,8 @@ from PySide6.QtWidgets import QMessageBox, QApplication
 
 from pupgui2.constants import APP_NAME, APP_ID, APP_ICON_FILE
 from pupgui2.constants import LOCAL_AWACY_GAME_LIST, PROTONDB_API_URL
-from pupgui2.constants import STEAM_STL_INSTALL_PATH, STEAM_STL_CONFIG_PATH, STEAM_STL_SHELL_FILES, STEAM_STL_FISH_VARIABLES, HOME_DIR
-from pupgui2.datastructures import SteamApp, AWACYStatus, BasicCompatTool, CTType, SteamUser
+from pupgui2.constants import STEAM_STL_INSTALL_PATH, STEAM_STL_CONFIG_PATH, STEAM_STL_SHELL_FILES, STEAM_STL_FISH_VARIABLES
+from pupgui2.datastructures import SteamApp, AWACYStatus, BasicCompatTool, CTType
 
 
 _cached_app_list = []
@@ -25,19 +24,14 @@ _cached_steam_ctool_id_map = None
 
 def get_steam_vdf_compat_tool_mapping(vdf_file: dict):
 
-    s = vdf_file.get('InstallConfigStore', {}).get('Software', {})
+    c = vdf_file.get('InstallConfigStore').get('Software')
 
     # Sometimes the key is 'Valve', sometimes 'valve', see #226
-    c = s.get('Valve') or s.get('valve')
+    c = c.get('Valve') or c.get('valve')
     if not c:
         raise KeyError('Error! config.vdf InstallConfigStore.Software neither contains key "Valve" nor "valve" - config.vdf file may be invalid!')
 
-    m = c.get('Steam', {}).get('CompatToolMapping', {})
-
-    if not m:  # equal to m == {} , may occur after fresh Steam installation
-        print('Warning: CompatToolMapping is empty')
-
-    return m
+    return c.get('Steam').get('CompatToolMapping')
 
 
 def get_steam_app_list(steam_config_folder: str, cached=False, no_shortcuts=False) -> List[SteamApp]:
@@ -111,8 +105,8 @@ def get_steam_shortcuts_list(steam_config_folder: str, compat_tools: dict=None) 
         if not compat_tools:
             compat_tools = get_steam_vdf_compat_tool_mapping(vdf.load(open(config_vdf_file)))
 
-        for userf in os.listdir(users_folder):
-            user_directory = os.path.join(users_folder, userf)
+        for file in os.listdir(users_folder):
+            user_directory = os.path.join(users_folder,file)
             if not os.path.isdir(user_directory):
                 continue
 
@@ -132,10 +126,7 @@ def get_steam_shortcuts_list(steam_config_folder: str, compat_tools: dict=None) 
                 
                 app.app_id = appid
                 app.shortcut_id = sid
-                app.shortcut_startdir = svalue.get('StartDir')
-                app.shortcut_exe = svalue.get('Exe')
-                app.shortcut_icon = svalue.get('icon')
-                app.shortcut_user = userf
+                app.shortcut_path = svalue.get('StartDir')
                 app.app_type = 'game'
                 app.game_name = svalue.get('AppName') or svalue.get('appname')
                 if ct := compat_tools.get(str(appid)):
@@ -165,7 +156,7 @@ def get_steam_ct_game_map(steam_config_folder: str, compat_tools: List[BasicComp
     Informal Example: { GE-Proton7-43: [GTA V, Cyberpunk 2077], SteamTinkerLaunch: [Vecter, Terraria] }
     Return Type: Dict[BasicCompatTool, List[SteamApp]]
     """
-    ct_game_map = {}
+    map = {}
 
     apps = get_steam_app_list(steam_config_folder, cached=cached)
 
@@ -173,9 +164,9 @@ def get_steam_ct_game_map(steam_config_folder: str, compat_tools: List[BasicComp
 
     for app in apps:
         if app.app_type == 'game' and app.compat_tool in ct_name_object_map:
-            ct_game_map.setdefault(ct_name_object_map.get(app.compat_tool), []).append(app)
+            map.setdefault(ct_name_object_map.get(app.compat_tool), []).append(app)
 
-    return ct_game_map
+    return map
 
 
 def get_steam_ctool_list(steam_config_folder: str, only_proton=False, cached=False) -> List[SteamApp]:
@@ -193,19 +184,6 @@ def get_steam_ctool_list(steam_config_folder: str, only_proton=False, cached=Fal
             ctools.append(app)
 
     return ctools
-
-
-def get_steam_global_ctool_name(steam_config_folder: str) -> str:
-
-    """
-    Return the internal name of the global Steam compatibility tool selected in the Steam Play settings from the Steam Client.
-    Return Type: str
-    """
-
-    config_vdf_file = os.path.join(os.path.expanduser(steam_config_folder), 'config.vdf')
-    d = get_steam_vdf_compat_tool_mapping(vdf.load(open(config_vdf_file)))
-
-    return d.get('0', {}).get('name', '')
 
 
 def get_steam_acruntime_list(steam_config_folder: str, cached=False) -> List[BasicCompatTool]:
@@ -276,7 +254,6 @@ def update_steamapp_info(steam_config_folder: str, steamapp_list: List[SteamApp]
                 if a := sapps.get(appid_str):
                     a.game_name = steam_app.get('data', {}).get('appinfo', {}).get('common', {}).get('name', '')
                     a.deck_compatibility = steam_app.get('data', {}).get('appinfo', {}).get('common', {}).get('steam_deck_compatibility', {})
-
                     if a.game_name.startswith('Proton') and a.game_name.endswith('Runtime'):
                         a.app_type = 'acruntime'
                     elif 'Steam Linux Runtime' in a.game_name:
@@ -287,8 +264,6 @@ def update_steamapp_info(steam_config_folder: str, steamapp_list: List[SteamApp]
                         ct = ctool_map.get(steam_app.get('appid'))
                         a.ctool_name = ct.get('name')
                         a.ctool_from_oslist = ct.get('from_oslist')
-                    elif a.app_id == 2230260:  # see https://github.com/DavidoTek/ProtonUp-Qt/pull/280
-                        a.app_type = 'useless-proton-next'
                     else:
                         a.app_type = 'game'
                     cnt += 1
@@ -446,7 +421,7 @@ def remove_steamtinkerlaunch(compat_folder='', remove_config=True, ctmod_object=
     """
 
     try:
-        os.chdir(HOME_DIR)
+        os.chdir(os.path.expanduser('~'))
 
         # If the Steam Deck/ProtonUp-Qt installation path doesn't exist
         # Adding `prefix` to path to be especially sure the user didn't just make an `stl` folder
@@ -500,7 +475,7 @@ def remove_steamtinkerlaunch(compat_folder='', remove_config=True, ctmod_object=
         # Works by getting all the lines in all the hardcoded Shell files that we write out to during installation and
         # and filtering out any line(s) that reference ProtonUp-Qt, then it writes that updated file content back out to the Shell file
         present_shell_files = [
-            os.path.join(HOME_DIR, f) for f in os.listdir(HOME_DIR) if os.path.isfile(os.path.join(HOME_DIR, f)) and f in STEAM_STL_SHELL_FILES
+            os.path.join(os.path.expanduser('~'), f) for f in os.listdir(os.path.expanduser('~')) if os.path.isfile(os.path.join(os.path.expanduser('~'), f)) and f in STEAM_STL_SHELL_FILES
         ]
         if os.path.exists(STEAM_STL_FISH_VARIABLES) or shutil.which('fish'):
             present_shell_files.append(STEAM_STL_FISH_VARIABLES)
@@ -611,158 +586,3 @@ def install_steam_library_shortcut(steam_config_folder: str, remove_shortcut=Fal
         print(f'Error: Could not add {APP_NAME} as Steam shortcut:', e)
 
     return 0
-
-
-def write_steam_shortcuts_list(steam_config_folder: str, shortcuts: List[SteamApp], delete_sids: List[int]) -> None:
-    """
-    Updates the Steam shortcuts.vdf file with the provided shortcuts
-    It will update existing shortcuts and add new ones
-
-    Parameters:
-        steam_config_folder: str
-            Path to the Steam config folder, e.g. '/home/user/.steam/root/config'
-        shortcuts: List[SteamApp]
-            List of shortcuts to add/update
-        delete_sids: List[int]
-            List of shortcut ids to delete
-    """
-    users_folder = os.path.realpath(os.path.join(os.path.expanduser(steam_config_folder), os.pardir, 'userdata'))
-
-    # group shortcuts by user like this: {user1: {sid1: shortcut1, sid2: shortcut2}, user2: {sid3: shortcut3}}
-    shortcuts_by_user: Dict[Dict[SteamApp]] = {}
-    for shortcut in shortcuts:
-        if shortcut.shortcut_user not in shortcuts_by_user:
-            shortcuts_by_user[shortcut.shortcut_user] = {}
-        shortcuts_by_user[shortcut.shortcut_user][shortcut.shortcut_id] = shortcut
-
-    for userf in shortcuts_by_user:
-        shortcuts_file = os.path.join(users_folder, userf, 'config', 'shortcuts.vdf')
-
-        # read shortcuts.vdf
-        shortcuts_vdf = {}
-        with open(shortcuts_file, 'rb') as f:
-            shortcuts_vdf = vdf.binary_load(f)
-        current_shortcuts = shortcuts_vdf.get('shortcuts', {})
-
-        # update/add new shortcuts
-        modified_shorcuts = shortcuts_by_user.get(userf, {})
-        for sid in list(modified_shorcuts.keys()):
-            shortcut_modified: SteamApp = modified_shorcuts.get(sid)
-            if sid in current_shortcuts:  # update existing shortcut
-                svalue_current = current_shortcuts.get(sid)
-                svalue_current['AppName'] = shortcut_modified.game_name
-                svalue_current['Exe'] = shortcut_modified.shortcut_exe
-                svalue_current['StartDir'] = shortcut_modified.shortcut_startdir
-                svalue_current['icon'] = shortcut_modified.shortcut_icon
-            else:  # add a new shortcut to shortcuts.vdf
-                svalue_new = {
-                    'appid': shortcut_modified.app_id,
-                    'AppName': shortcut_modified.game_name,
-                    'Exe': shortcut_modified.shortcut_exe,
-                    'StartDir': shortcut_modified.shortcut_startdir,
-                    'icon': shortcut_modified.shortcut_icon,
-                    'ShortcutPath': '',
-                    'LaunchOptions': '',
-                    'IsHidden': 0,
-                    'AllowDesktopConfig': 1,
-                    'AllowOverlay': 1,
-                    'OpenVR': 0,
-                    'Devkit': 0,
-                    'DevkitGameID': '',
-                    'DevkitOverrideAppID': 0,
-                    'LastPlayTime': 0,
-                    'FlatpakAppID': '',
-                    'tags': {}
-                }
-                current_shortcuts[sid] = svalue_new
-
-        # delete shortcuts that are marked for deletion
-        for sid in delete_sids:
-            current_shortcuts.pop(sid)
-
-        # write shortcuts.vdf
-        try:
-            with open(shortcuts_file, 'wb') as f:
-                f.write(vdf.binary_dumps(shortcuts_vdf))
-        except Exception as e:
-            print(f'Error: Could not write_steam_shortcuts_list for user {userf}:', e)
-
-
-def calc_shortcut_app_id(appname: str, exe: str) -> int:
-    """
-    Calculates an app id for a shortcut based on the app name and executable.
-    Based on https://github.com/SteamGridDB/steam-rom-manager/blob/master/src/lib/helpers/steam/generate-app-id.ts
-
-    Parameters:
-        appname: str
-            game_name of the shortcut
-        exe: str
-            shortcut_exe
-
-    Returns:
-        int
-    """
-    key = exe + appname
-    return (binascii.crc32(key.encode()) | 0x80000000) - 0x100000000
-
-
-def get_steam_user_list(steam_config_folder: str) -> List[SteamUser]:
-    """
-    Returns a list of Steam users
-
-    Parameters:
-        steam_config_folder: str
-            e.g. '~/.steam/root/config'
-
-    Return Type: List[SteamUser]
-    """
-    loginusers_vdf_file = os.path.join(os.path.expanduser(steam_config_folder), 'loginusers.vdf')
-
-    users = []
-
-    if not os.path.exists(loginusers_vdf_file):
-        print(f'Warning: Loginusers file does not exist at {loginusers_vdf_file}')
-        return []
-
-    try:
-        with open(loginusers_vdf_file) as f:
-            d = vdf.load(f)
-            u = d.get('users', {})
-            for uid in list(u.keys()):
-                uvalue = u.get(uid, {})
-
-                user = SteamUser()
-                user.long_id = int(uid)
-                user.account_name = uvalue.get('AccountName', '')
-                user.persona_name = uvalue.get('PersonaName', '')
-                user.most_recent = bool(int(uvalue.get('MostRecent', '0')))
-                user.timestamp = int(uvalue.get('Timestamp', '-1'))
-
-                users.append(user)
-    except Exception as e:
-        print('Error: Could not get a list of Steam users:', e)
-
-    return users
-
-
-def determine_most_recent_steam_user(steam_users: List[SteamUser]) -> SteamUser:
-    """
-    Returns the Steam user that was logged-in most recent, otherwise the first user or None.
-    Looks for the first user with most_recent=True.
-
-    Parameters:
-        steam_users: List[SteamUser]
-            list of steam users, from get_steam_user_list()
-
-    Return Type: SteamUser|None
-    """
-    for user in steam_users:
-        if user.most_recent == True:
-            return user
-
-    if len(steam_users) > 0:
-        print(f'Warning: There is no most recent Steam user. Returning the first user {steam_users[0].get_short_id()}')
-        return steam_users[0]
-
-    print('Warning: No Steam users found. Returning None')
-    return None

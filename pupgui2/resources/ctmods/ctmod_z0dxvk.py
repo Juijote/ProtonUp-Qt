@@ -5,12 +5,9 @@
 import os
 import requests
 
-from typing import Dict
-
 from PySide6.QtCore import QObject, QCoreApplication, Signal, Property
 
-from pupgui2.util import extract_tar, get_launcher_from_installdir, fetch_project_releases, fetch_project_release_data, build_headers_with_authorization
-from pupgui2.datastructures import Launcher
+from pupgui2.util import ghapi_rlcheck, extract_tar
 
 
 CT_NAME = 'DXVK'
@@ -30,11 +27,7 @@ class CtInstaller(QObject):
     def __init__(self, main_window = None):
         super(CtInstaller, self).__init__()
         self.p_download_canceled = False
-        self.release_format = 'tar.gz'
-
-        self.rs = requests.Session()
-        rs_headers = build_headers_with_authorization({}, main_window.web_access_tokens, 'github')
-        self.rs.headers.update(rs_headers)
+        self.rs = main_window.rs or requests.Session()
 
     def get_download_canceled(self):
         return self.p_download_canceled
@@ -61,8 +54,7 @@ class CtInstaller(QObject):
             return False
 
         self.__set_download_progress_percent(1) # 1 download started
-        # https://stackoverflow.com/questions/53797628/request-has-no-content-length#53797919
-        f_size = len(file.content)
+        f_size = int(file.headers.get('content-length'))
         c_count = int(f_size / self.BUFFER_SIZE)
         c_current = 1
         destination = os.path.expanduser(destination)
@@ -81,17 +73,24 @@ class CtInstaller(QObject):
         self.__set_download_progress_percent(99) # 99 download complete
         return True
 
-    def __fetch_data(self, tag: str = '') -> Dict:
-
+    def __fetch_github_data(self, tag):
         """
-        Fetch release information
+        Fetch GitHub release information
         Return Type: dict
         Content(s):
-            'version', 'date', 'download', 'size'
+            'version', 'date', 'download', 'size', 'checksum'
         """
+        url = self.CT_URL + (f'/tags/{tag}' if tag else '/latest')
+        data = self.rs.get(url).json()
+        if 'tag_name' not in data:
+            return None
 
-        asset_condition = lambda asset: 'native' not in [asset.get('name', ''), asset.get('url', '')]  # 'name' for github asset, 'url' for gitlab asset
-        return fetch_project_release_data(self.CT_URL, self.release_format, self.rs, tag=tag, asset_condition=asset_condition)
+        values = {'version': data['tag_name'], 'date': data['published_at'].split('T')[0]}
+        for asset in data['assets']:
+            if asset['name'].endswith('tar.gz') and 'native' not in asset['name']:
+                values['download'] = asset['browser_download_url']
+                values['size'] = asset['size']
+        return values
 
     def is_system_compatible(self):
         """
@@ -103,17 +102,17 @@ class CtInstaller(QObject):
     def fetch_releases(self, count=100):
         """
         List available releases
-        Return Type: list[str]
+        Return Type: str[]
         """
-        return fetch_project_releases(self.CT_URL, self.rs, count=count)
+        return [release['tag_name'] for release in ghapi_rlcheck(self.rs.get(f'{self.CT_URL}?per_page={str(count)}').json()) if 'tag_name' in release]
 
     def get_tool(self, version, install_dir, temp_dir):
         """
         Download and install the compatibility tool
         Return Type: bool
         """
+        data = self.__fetch_github_data(version)
 
-        data = self.__fetch_data(version)
         if not data or 'download' not in data:
             return False
 
@@ -143,10 +142,9 @@ class CtInstaller(QObject):
         Return Type: str
         """
 
-        launcher = get_launcher_from_installdir(install_dir)
-        if launcher == Launcher.LUTRIS:
+        if 'lutris/runners' in install_dir:
             return os.path.abspath(os.path.join(install_dir, '../../runtime/dxvk'))
-        if launcher == Launcher.HEROIC:
+        if 'heroic/tools' in install_dir:
             return os.path.abspath(os.path.join(install_dir, '../dxvk'))
         else:
             return install_dir  # Default to install_dir

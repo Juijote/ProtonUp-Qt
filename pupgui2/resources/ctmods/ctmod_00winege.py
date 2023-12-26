@@ -8,9 +8,7 @@ import hashlib
 
 from PySide6.QtCore import QObject, QCoreApplication, Signal, Property
 
-from pupgui2.datastructures import Launcher
-from pupgui2.util import ghapi_rlcheck, extract_tar, get_launcher_from_installdir
-from pupgui2.util import build_headers_with_authorization
+from pupgui2.util import ghapi_rlcheck, extract_tar
 
 
 CT_NAME = 'Wine-GE'
@@ -30,10 +28,7 @@ class CtInstaller(QObject):
     def __init__(self, main_window = None):
         super(CtInstaller, self).__init__()
         self.p_download_canceled = False
-
-        self.rs = requests.Session()
-        rs_headers = build_headers_with_authorization({}, main_window.web_access_tokens, 'github')
-        self.rs.headers.update(rs_headers)
+        self.rs = main_window.rs or requests.Session()
 
     def get_download_canceled(self):
         return self.p_download_canceled
@@ -138,14 +133,12 @@ class CtInstaller(QObject):
         if not data or 'download' not in data:
             return False
 
-        ge_extract_basename = f"lutris-{data['version']}-x86_64"
-        ge_extract_fullpath = os.path.join(install_dir, ge_extract_basename)
-
-        checksum_dir = os.path.join(ge_extract_fullpath, 'sha512sum')
+        protondir = f'{install_dir}lutris-ge-' + data['version'].replace('GE-', '').lower() + '-x86_64'
+        checksum_dir = f'{protondir}/sha512sum'
         source_checksum = self.rs.get(data['checksum']).text if 'checksum' in data else None
         local_checksum = open(checksum_dir).read() if os.path.exists(checksum_dir) else None
 
-        if os.path.exists(ge_extract_fullpath):
+        if os.path.exists(protondir):
             if local_checksum and source_checksum:
                 if local_checksum in source_checksum:
                     return False
@@ -166,33 +159,9 @@ class CtInstaller(QObject):
         if os.path.exists(checksum_dir):
             open(checksum_dir, 'w').write(download_checksum)
 
-        # Make sure extracted directory name matches name launcher expects (i.e. Lutris uses a custom name format)
-        ge_updated_dirname = os.path.join(install_dir, self.get_launcher_extract_dirname(ge_extract_basename, install_dir))
-        os.rename(ge_extract_fullpath, ge_updated_dirname)
-
         self.__set_download_progress_percent(100)
 
         return True
-
-    def get_launcher_extract_dirname(self, original_name: str, install_dir: str) -> str:
-
-        """
-        Return base extract directory name updated to match naming scheme expected for given launcher.
-        Example: 'lutris-GE-Proton8-17-x86_64' -> 'wine-ge-8-17-x86_64'
-
-        Return Type: str
-        """
-
-        launcher_name = ''
-        launcher = get_launcher_from_installdir(install_dir)
-        if launcher == Launcher.LUTRIS:
-            # Lutris expects this name format for self-updating, see #294 -- ex: wine-ge-8-17-x86_64
-            launcher_name = original_name.lower().replace('lutris', 'wine').replace('proton', '')
-        elif launcher == Launcher.HEROIC:
-            # This matches Heroic Wine-GE naming convention -- ex: Wine-GE-Proton8-17
-            launcher_name = original_name.replace('lutris', 'Wine').rsplit('-', 1)[0]
-
-        return launcher_name or original_name
 
     def get_info_url(self, version):
         """

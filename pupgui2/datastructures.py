@@ -48,29 +48,12 @@ class MsgBoxResult:
     is_checked : bool = None
 
 
-class SteamUser:
-    long_id = -1
-    account_name = ''
-    persona_name = ''
-    most_recent = False
-    timestamp = -1
-
-    def get_short_id(self) -> int:
-        """
-        Returns the shortened Steam user id
-        """
-        return self.long_id & 0xFFFFFFFF
-
-
 class SteamApp:
     app_id = -1
     libraryfolder_id = -1
     libraryfolder_path = ''
-    shortcut_id = ''  # dict key must be string (e.g. '1')
-    shortcut_startdir = ''
-    shortcut_exe = ''
-    shortcut_icon = ''
-    shortcut_user = ''
+    shortcut_id = -1  # Will be a number >=0 if it is a Non-Steam shortcut
+    shortcut_path = ''
     game_name = ''
     compat_tool = ''
     app_type = ''
@@ -98,6 +81,9 @@ class SteamApp:
         except:
             return ''
 
+    def get_shortcut_id_str(self) -> str:
+        return str(self.shortcut_id)
+
 
 class BasicCompatTool:
     displayname = ''
@@ -106,7 +92,6 @@ class BasicCompatTool:
     install_dir = ''
     install_folder = ''
     ct_type = CTType.UNKNOWN
-    is_global = False
 
     def __init__(self, displayname, install_dir, install_folder, ct_type = CTType.UNKNOWN) -> None:
         self.displayname = displayname
@@ -117,21 +102,13 @@ class BasicCompatTool:
     def set_version(self, ver : str) -> None:
         self.version = ver
 
-    def set_global(self, is_global: bool = True):
-        self.is_global = is_global
-
-    def get_displayname(self, unused_tr='unused', global_tr='global') -> str:
+    def get_displayname(self, unused_tr='unused') -> str:
         """ Returns the display name, e.g. GE-Proton7-17 or luxtorpeda v57 """
         displayname = self.displayname
         if self.version != '':
             displayname += f' {self.version}'
-
-        # Don't mark global tools as unused
-        if self.is_global:
-            displayname += f' ({global_tr})'
-        elif self.no_games == 0:
+        if self.no_games == 0:
             displayname += f' ({unused_tr})'
-
         return displayname
 
     def get_internal_name(self) -> str:
@@ -216,11 +193,3 @@ class HeroicGame:
         
         with open(game_config, 'r') as gcf:
             return json.load(gcf).get(self.app_name, {})
-
-
-class Launcher(Enum):
-    UNKNOWN = 0
-    STEAM = 1
-    LUTRIS = 2
-    BOTTLES = 3
-    HEROIC = 4

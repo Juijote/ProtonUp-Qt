@@ -7,20 +7,19 @@ import requests
 
 from PySide6.QtCore import QObject, Signal, Property, QCoreApplication
 
-from pupgui2.util import extract_tar
-from pupgui2.util import build_headers_with_authorization, fetch_project_release_data, fetch_project_releases
+from pupgui2.util import ghapi_rlcheck, extract_tar
 
 
-CT_NAME = 'Northstar Proton (Titanfall 2)'
+CT_NAME = 'NorthStar Proton (TitanFall 2)'
 CT_LAUNCHERS = ['steam', 'heroicproton', 'bottles', 'advmode']
-CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_northstarproton', '''Proton build based on TKG's proton-tkg to run the Northstar client + TitanFall 2. By cyrv6737.<br/><br/><b style="color:orange;">Read the following before proceeding</b>:<br/><a href="https://github.com/R2NorthstarTools/NorthstarProton">https://github.com/R2NorthstarTools/NorthstarProton</a>''')}
+CT_DESCRIPTION = {'en': QCoreApplication.instance().translate('ctmod_northstarproton', '''Proton build based on TKG's proton-tkg to run the Northstar client + TitanFall 2. By cyrv6737.<br/><br/><b style="color:orange;">Read the following before proceeding</b>:<br/><a href="https://github.com/cyrv6737/NorthstarProton">https://github.com/cyrv6737/NorthstarProton</a>''')}
 
 
 class CtInstaller(QObject):
 
     BUFFER_SIZE = 65536
-    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/R2NorthstarTools/NorthstarProton/releases'
-    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/R2NorthstarTools/NorthstarProton/releases/tag/'
+    CT_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/cyrv6737/NorthstarProton/releases'
+    CT_INFO_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/cyrv6737/NorthstarProton/releases/tag/'
 
     p_download_progress_percent = 0
     download_progress_percent = Signal(int)
@@ -28,11 +27,7 @@ class CtInstaller(QObject):
     def __init__(self, main_window = None):
         super(CtInstaller, self).__init__()
         self.p_download_canceled = False
-        self.release_format = 'tar.gz'
-
-        self.rs = requests.Session()
-        rs_headers = build_headers_with_authorization({}, main_window.web_access_tokens, 'github')
-        self.rs.headers.update(rs_headers)
+        self.rs = main_window.rs or requests.Session()
 
     def get_download_canceled(self):
         return self.p_download_canceled
@@ -85,8 +80,17 @@ class CtInstaller(QObject):
         Content(s):
             'version', 'date', 'download', 'size'
         """
+        url = self.CT_URL + (f'/tags/{tag}' if tag else '/latest')
+        data = self.rs.get(url).json()
+        if 'tag_name' not in data:
+            return None
 
-        return fetch_project_release_data(self.CT_URL, self.release_format, self.rs, tag=tag)
+        values = {'version': data['tag_name'], 'date': data['published_at'].split('T')[0]}
+        for asset in data['assets']:
+            if asset['name'].endswith('tar.gz'):
+                values['download'] = asset['browser_download_url']
+                values['size'] = asset['size']
+        return values
 
     def is_system_compatible(self):
         """
@@ -100,8 +104,7 @@ class CtInstaller(QObject):
         List available releases
         Return Type: str[]
         """
-
-        return fetch_project_releases(self.CT_URL, self.rs, count=count)
+        return [release['tag_name'] for release in ghapi_rlcheck(self.rs.get(f'{self.CT_URL}?per_page={str(count)}').json()) if 'tag_name' in release]
 
     def get_tool(self, version, install_dir, temp_dir):
         """

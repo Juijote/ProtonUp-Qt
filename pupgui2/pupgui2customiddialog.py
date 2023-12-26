@@ -7,7 +7,6 @@ from PySide6.QtWidgets import QFileDialog, QLineEdit
 from PySide6.QtUiTools import QUiLoader
 
 from pupgui2.util import config_custom_install_location, get_install_location_from_directory_name, get_dict_key_from_value, get_combobox_index_by_value
-from pupgui2.constants import HOME_DIR
 
 
 class PupguiCustomInstallDirectoryDialog(QObject):
@@ -84,7 +83,7 @@ class PupguiCustomInstallDirectoryDialog(QObject):
         dialog.setFileMode(QFileDialog.Directory)
         dialog.setOption(QFileDialog.ShowDirsOnly)
         dialog.setWindowTitle(self.tr('Select Custom Install Directory — ProtonUp-Qt'))
-        dialog.setDirectory(HOME_DIR)
+        dialog.setDirectory(os.path.expanduser('~'))
         dialog.fileSelected.connect(self.ui.txtInstallDirectory.setText)
         dialog.open()
 
