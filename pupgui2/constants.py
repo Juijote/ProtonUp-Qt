@@ -12,9 +12,11 @@ APP_ICON_FILE = os.path.join(xdg_config_home, 'pupgui/appicon256.png')
 APP_GHAPI_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/Davidotek/ProtonUp-qt/releases'
 DAVIDOTEK_KOFI_URL = 'https://ko-fi.com/davidotek'
 PROTONUPQT_GITHUB_URL = 'https://steamdeck-proxy.juij.eu.org/https://github.com/DavidoTek/ProtonUp-Qt'
+JUIJ_URL = 'https://juij.eu.org/#ProtonUp-Qt'
 ABOUT_TEXT = '''\
 {APP_NAME} v{APP_VERSION} by DavidoTek: <a href="{PROTONUPQT_GITHUB_URL}">https://github.com/DavidoTek/ProtonUp-Qt</a><br />
-Copyright (C) 2021-2023 DavidoTek, licensed under GPLv3
+Copyright (C) 2021-2023 DavidoTek, licensed under GPLv3<br />
+<a href="{JUIJ_URL}">[汉化 & 代理加速] 更新下载</a>
 '''.format(APP_NAME=APP_NAME, APP_VERSION=APP_VERSION, PROTONUPQT_GITHUB_URL=PROTONUPQT_GITHUB_URL)
 BUILD_INFO = 'built from source'
 
