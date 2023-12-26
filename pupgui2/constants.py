@@ -6,7 +6,7 @@ from PySide6.QtGui import QColor, QPalette
 
 
 APP_NAME = 'ProtonUp-Qt'
-APP_VERSION = '2.8.2'
+APP_VERSION = '2.8.2-zh'
 APP_ID = 'net.davidotek.pupgui2'
 APP_ICON_FILE = os.path.join(xdg_config_home, 'pupgui/appicon256.png')
 APP_GHAPI_URL = 'https://steamdeck-proxy.juij.eu.org/https://api.github.com/repos/Davidotek/ProtonUp-qt/releases'
@@ -16,7 +16,7 @@ JUIJ_URL = 'https://juij.eu.org/#ProtonUp-Qt'
 ABOUT_TEXT = '''\
 {APP_NAME} v{APP_VERSION} by DavidoTek: <a href="{PROTONUPQT_GITHUB_URL}">https://github.com/DavidoTek/ProtonUp-Qt</a><br />
 Copyright (C) 2021-2023 DavidoTek, licensed under GPLv3<br />
-<a href="{JUIJ_URL}">更新下载</a>
+<a href="{JUIJ_URL}">[汉化 & 代理加速] 更新下载</a>
 '''.format(APP_NAME=APP_NAME, APP_VERSION=APP_VERSION, PROTONUPQT_GITHUB_URL=PROTONUPQT_GITHUB_URL, JUIJ_URL=JUIJ_URL)
 BUILD_INFO = 'built from source'
 
