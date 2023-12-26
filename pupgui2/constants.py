@@ -17,7 +17,7 @@ ABOUT_TEXT = '''\
 {APP_NAME} v{APP_VERSION} by DavidoTek: <a href="{PROTONUPQT_GITHUB_URL}">https://github.com/DavidoTek/ProtonUp-Qt</a><br />
 Copyright (C) 2021-2023 DavidoTek, licensed under GPLv3<br />
 <a href="{JUIJ_URL}">更新下载</a>
-'''.format(APP_NAME=APP_NAME, APP_VERSION=APP_VERSION, PROTONUPQT_GITHUB_URL=PROTONUPQT_GITHUB_URL)
+'''.format(APP_NAME=APP_NAME, APP_VERSION=APP_VERSION, PROTONUPQT_GITHUB_URL=PROTONUPQT_GITHUB_URL, JUIJ_URL=JUIJ_URL)
 BUILD_INFO = 'built from source'
 
 CONFIG_FILE = os.path.join(xdg_config_home, 'pupgui/config.ini')
