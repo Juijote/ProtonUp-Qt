@@ -115,7 +115,7 @@ Cancel and exit anyway?</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="20"/>
         <source>ProtonUp-Qt - Wine/Proton Installer</source>
-        <translation>ProtonUp-Qt - Wine/Proton 安装助手</translation>
+        <translation>ProtonUp-Qt - Wine/Proton 安装助手 [Juij 汉化 &amp; 加速]</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="48"/>
@@ -282,7 +282,7 @@ You are running {APP_VERSION} but {newest_version} is available.</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="40"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;GUI for installing/updating Wine- and Proton-based compatibility tools.&lt;br/&gt;Inspired by/partly based on AUNaseef&apos;s protonup.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用於安裝/更新基於 Win- 和 Proton- 的相容工具的 GUI。&lt;br/&gt;受到 AUNaseef 的 protonup 啟發/部分基於此。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;用于安装/更新基于 Wine 和 Proton 兼容层工具的 GUI 助手。&lt;br/&gt;受到 AUNaseef 的 protonup 启发/部分基于此。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="91"/>
@@ -313,7 +313,7 @@ To remove the shortcut, open Steam and select &quot;remove non-Steam game from y
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="174"/>
         <source>Add Steam shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>添加 Steam 快捷方式</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_aboutdialog.ui" line="181"/>
