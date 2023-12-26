@@ -118,7 +118,7 @@ Cancel and exit anyway?</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="20"/>
         <source>ProtonUp-Qt - Wine/Proton Installer</source>
-        <translation>ProtonUp-Qt - Wine/Proton 安装助手 [Juij 汉化 &amp; 代理加速]</translation>
+        <translation>ProtonUp-Qt - Wine/Proton 安装助手 [Juij 汉化 &amp; 代理加速] [2023-12-27]</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="48"/>
