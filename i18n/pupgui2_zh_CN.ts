@@ -103,7 +103,7 @@ Cancel and exit anyway?</source>
     <message>
         <location filename="../pupgui2/pupgui2.py" line="382"/>
         <source>Info: You can get GE-Proton / Boxtron directly from Flathub!</source>
-        <translation>提醒：可以直接从 Flathub 下载 GE-Proton / Boxtron！</translation>
+        <translation>信息：可以直接从 Flathub 下载 GE-Proton / Boxtron！</translation>
     </message>
     <message>
         <location filename="../pupgui2/pupgui2.py" line="419"/>
@@ -163,7 +163,7 @@ Cancel and exit anyway?</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="162"/>
         <source>Show info</source>
-        <translation>显示提醒</translation>
+        <translation>显示详细信息</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_mainwindow.ui" line="199"/>
@@ -703,7 +703,7 @@ Trending: {trending}</source>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_installdialog.ui" line="106"/>
         <source>Info</source>
-        <translation>提醒</translation>
+        <translation>详细信息</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ui/pupgui2_installdialog.ui" line="113"/>
