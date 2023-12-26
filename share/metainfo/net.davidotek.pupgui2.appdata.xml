@@ -8,7 +8,11 @@
   <summary xml:lang="it_IT">Installa tool di compatibilità basati su Wine e Proton</summary>
   <summary xml:lang="nl_NL">Installeer op Wine en Proton gebaseerde compatibiliteitshulpmiddelen</summary>
   <summary xml:lang="pl_PL">Zainstaluj narzędzia kompatybilności oparte na Wine i Protonie</summary>
+  <summary xml:lang="zh_CN">安装基于 Win 和 Proton 的兼容层工具</summary>
   <summary xml:lang="zh_TW">安裝基於 Win 和 Proton 的相容工具</summary>
+  <summary xml:lang="zh_HK">安裝基於 Win 和 Proton 的相容工具</summary>
+  
+  
 
   <keywords>
     <keyword>Proton-GE</keyword>
