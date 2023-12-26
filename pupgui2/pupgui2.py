@@ -177,7 +177,7 @@ class MainWindow(QObject):
         """ Show the default text in the status bar - non-blocking using update_statusbar_message Signal """
         def _set_default_statusbar_thread(update_statusbar_message: Signal):
             if not is_online():
-                update_statusbar_message.emit(f'{APP_NAME} {APP_VERSION} (Offline)')
+                update_statusbar_message.emit(f'{APP_NAME} {APP_VERSION} (离线)')
             else:
                 update_statusbar_message.emit(f'{APP_NAME} {APP_VERSION}')
         t = threading.Thread(target=_set_default_statusbar_thread, args=[self.update_statusbar_message])

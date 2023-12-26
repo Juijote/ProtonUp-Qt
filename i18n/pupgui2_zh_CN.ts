@@ -451,19 +451,19 @@ To remove the shortcut, open Steam and select &quot;remove non-Steam game from y
     </message>
     <message>
         <source>Save</source>
-        <translation>保存</translation>
+        <translation type="vanished">保存</translation>
     </message>
     <message>
         <source>Directory:</source>
-        <translation>文件夹：</translation>
+        <translation type="vanished">文件夹：</translation>
     </message>
     <message>
         <source>Launcher:</source>
-        <translation>启动器：</translation>
+        <translation type="vanished">启动器：</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>重置</translation>
+        <translation type="vanished">重置</translation>
     </message>
 </context>
 <context>
@@ -935,7 +935,7 @@ SteamTinkerLaunch 有许多&lt;b&gt;可选依赖项&lt;/b&gt;，必须单独安�
         <source>You have several unmet dependencies for SteamTinkerLaunch.
 
 </source>
-        <translation>你有几个依赖项未满足 SteamTinkerLaunch。</translation>
+        <translation>有几个依赖项未满足 SteamTinkerLaunch。</translation>
     </message>
     <message>
         <location filename="../pupgui2/resources/ctmods/ctmod_steamtinkerlaunch.py" line="202"/>
